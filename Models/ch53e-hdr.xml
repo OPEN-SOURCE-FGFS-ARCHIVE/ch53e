@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>ch53e.ac</path>
+
+
+  <!-- Transparent Objects -->
+  
+  <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+         <object-name>Plane.005</object-name>
+        <object-name>Plane.006</object-name>
+        <object-name>Circle.023</object-name>
+        <object-name>Circle.024</object-name>
+		  <object-name>TLB.002</object-name>
+        <object-name>Circle.018</object-name>
+        <object-name>Circle.020</object-name>
+        <object-name>Circle.028</object-name>
+        <object-name>Circle</object-name>
+        <object-name>MainRotProp</object-name>
+        <object-name>TailRotProp</object-name>
+    </effect> 
+  
+  
+  
+  
+  <effect>
+         <inherits-from>Aircraft/ch53e/Models/Effects/glassout</inherits-from>
+        <object-name>GL</object-name>
+		<object-name>GLup</object-name>
+		 <object-name>LSwindowGL</object-name>
+        <object-name>CrewDoorGL</object-name>
+        <object-name>BayDoorGL</object-name>
+       
+        <object-name>MLBglass</object-name>
+        <object-name>LBglass</object-name>
+        <object-name>RBglass</object-name>
+      
+    </effect>
+	
+	<animation>
+  <type>select</type>
+ <object-name>GL</object-name>
+		<object-name>GLup</object-name>
+		 <object-name>LSwindowGL</object-name>
+        <object-name>CrewDoorGL</object-name>
+        <object-name>BayDoorGL</object-name>
+  <condition>
+   <not>
+   <equals>
+    <property>sim/current-view/internal</property>
+    <value>true</value>
+   </equals>
+   </not>
+  </condition>
+ </animation>  
+	
+
+	
+	<effect>
+       <inherits-from>Effects/glass</inherits-from>
+        <object-name>GLin</object-name>
+		<object-name>GLupin</object-name>
+		 <object-name>LSwindowGLin</object-name>
+        <object-name>CrewDoorGLin</object-name>
+        <object-name>BayDoorGLin</object-name>
+       
+    </effect>
+	
+	<animation>
+  <type>select</type>
+     <object-name>GLin</object-name>
+		<object-name>GLupin</object-name>
+		 <object-name>LSwindowGLin</object-name>
+        <object-name>CrewDoorGLin</object-name>
+        <object-name>BayDoorGLin</object-name>
+  <condition>
+
+   <equals>
+    <property>sim/current-view/internal</property>
+    <value>true</value>
+   </equals>
+   
+  </condition>
+ </animation>	
+
+
+	 <effect>
+    <inherits-from>Aircraft/ch53e/Models/Effects/reflect-uber</inherits-from>
+   <object-name>FuselageM</object-name>
+	<object-name>FuselageUP</object-name>
+	<object-name>Eng1</object-name>
+	<object-name>Eng2</object-name>
+	<object-name>Eng3</object-name>
+	<object-name>Circle.012</object-name>
+	<object-name>Circle.016</object-name>
+	<object-name>Circle.015</object-name>
+	<object-name>Circle.017</object-name>
+	<object-name>BlastWarn</object-name>
+	<object-name>Eng1sup</object-name>
+	<object-name>Eng2sup</object-name>
+	<object-name>Circle.056</object-name>
+	<object-name>Circle.006</object-name>
+	<object-name>Circle.077</object-name>
+	<object-name>Circle.003</object-name>
+	<object-name>Cube.022</object-name>
+	<object-name>Cube.021</object-name>
+	<object-name>Cube.016</object-name>
+	<object-name>Cube.020</object-name>
+	<object-name>RefuelBoom</object-name>
+	<object-name>Plane.008</object-name>
+	<object-name>Cylinder.026</object-name>
+	<object-name>Cylinder</object-name>
+	<object-name>Plane.023</object-name>
+	<object-name>Circle.060</object-name>
+	<object-name>Circle.011</object-name>
+	<object-name>Plane.020</object-name>
+	<object-name>Plane</object-name>
+	<object-name>FuselageM.001</object-name>
+	<object-name>Cube.009</object-name>
+	<object-name>NgearComp</object-name>
+	<object-name>NGD1</object-name>
+	<object-name>NGD2</object-name>
+	<object-name>OleoCylNG</object-name>
+	<object-name>NGDbrace</object-name>
+	<object-name>OleoPNG</object-name>
+	<object-name>NW</object-name>
+	<object-name>RLOleoCyl</object-name>
+	<object-name>RLOleoP</object-name>
+	<object-name>Ltorque1</object-name>
+	<object-name>Ltorque2</object-name>
+	<object-name>LRDbrace</object-name>
+	<object-name>LW</object-name>
+	<object-name>RROleoCyl</object-name>
+	<object-name>RROleoP</object-name>
+	<object-name>Rtorque1</object-name>
+	<object-name>Rtorque2</object-name>
+	<object-name>RRDbrace</object-name>
+	<object-name>RW</object-name>
+	<object-name>LtankSup</object-name>
+	<object-name>RtankSup</object-name>
+	<object-name>Ltank</object-name>
+	<object-name>Rtank</object-name>
+	<object-name>Cube.006</object-name>
+	<object-name>Cube</object-name>
+	<object-name>Cube.008</object-name>
+	<object-name>Cylinder.012</object-name>
+	<object-name>Cylinder.015</object-name>
+	<object-name>Cylinder.013</object-name>
+	<object-name>Cylinder.014</object-name>
+	<object-name>Cylinder.031</object-name>
+	<object-name>Cylinder.003</object-name>
+	<object-name>Cylinder.001</object-name>
+	<object-name>Plane.025</object-name>
+	<object-name>Plane.002</object-name>
+	<object-name>Circle.033</object-name>
+	<object-name>Circle.002</object-name>
+	<object-name>Circle.036</object-name>
+	<object-name>Circle.022</object-name>
+	<object-name>Plane.004</object-name>
+	<object-name>TailBoom</object-name>
+	<object-name>RearD</object-name>
+	<object-name>TBrotAxis</object-name>
+	<object-name>TBsupUP</object-name>
+	<object-name>TBsup</object-name>
+	<object-name>TBsupL</object-name>
+	<object-name>InterGbox</object-name>
+	<object-name>TailPsup</object-name>
+	<object-name>TailP</object-name>
+	<object-name>TailBumper</object-name>
+	<object-name>Circle.021</object-name>
+	<object-name>TailRotBase</object-name>
+	<object-name>TailRotorBlades</object-name>
+	<object-name>TLB</object-name>
+	<object-name>MLB</object-name>
+	<object-name>CrewDoorL</object-name>
+	<object-name>CrewDoorUP</object-name>
+	<object-name>Plane.026</object-name>
+	<object-name>CDoorSP</object-name>
+	<object-name>LSwindow</object-name>
+	<object-name>Plane.024</object-name>
+	<object-name>Plane.007</object-name>
+	<object-name>Plane.063</object-name>
+	<object-name>Plane.076</object-name>
+	<object-name>Plane.069</object-name>
+	<object-name>BayDoorL</object-name>
+	<object-name>BayDoorUP</object-name>
+	<object-name>SP</object-name>
+	<object-name>Hub-Top</object-name>
+	<object-name>Hub-C</object-name>
+	<object-name>Hub-base</object-name>
+	<object-name>Hub-base.001</object-name>
+	<object-name>Hub-base.005</object-name>
+	<object-name>BS1</object-name>
+	<object-name>BS2</object-name>
+	<object-name>BS3</object-name>
+	<object-name>BS4</object-name>
+	<object-name>BS5</object-name>
+	<object-name>BS6</object-name>
+	<object-name>BS7</object-name>
+	<object-name>BS1.001</object-name>
+	<object-name>BS2.001</object-name>
+	<object-name>BS3.001</object-name>
+	<object-name>BS4.001</object-name>
+	<object-name>BS5.001</object-name>
+	<object-name>BS6.001</object-name>
+	<object-name>BS7.001</object-name>
+	<object-name>PfixM1</object-name>
+	<object-name>PfixM2</object-name>
+	<object-name>PfixM3</object-name>
+	<object-name>PfixM4</object-name>
+	<object-name>PfixM5</object-name>
+	<object-name>PfixM6</object-name>
+	<object-name>PfixM7</object-name>
+	<object-name>PaleFix1</object-name>
+	<object-name>PaleFix2</object-name>
+	<object-name>PaleFix3</object-name>
+	<object-name>PaleFix4</object-name>
+	<object-name>PaleFix5</object-name>
+	<object-name>PaleFix6</object-name>
+	<object-name>PaleFix7</object-name>
+  </effect>	
+	
+	
+	
+
+   
+
+  
+ 
+
+</PropertyList>
+

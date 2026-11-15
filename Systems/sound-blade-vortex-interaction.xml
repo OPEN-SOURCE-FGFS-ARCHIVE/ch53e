@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <filter>
+        <type>moving-average</type>
+        <samples>60</samples>
+        <input>/rotors/main/blade[0]/flap-deg</input>
+        <output>/rotors/main/blade[0]/avg-flap-deg</output>
+    </filter>
+
+    <filter>
+        <type>moving-average</type>
+        <samples>30</samples>
+        <input>/rotors/main/blade[0]/incidence-deg</input>
+        <output>/rotors/main/blade[0]/avg-incidence-deg</output>
+    </filter>
+
+    <filter>
+        <type>moving-average</type>
+        <samples>60</samples>
+        <input>/rotors/main/blade[1]/flap-deg</input>
+        <output>/rotors/main/blade[1]/avg-flap-deg</output>
+    </filter>
+
+    <filter>
+        <type>moving-average</type>
+        <samples>30</samples>
+        <input>/rotors/main/blade[1]/incidence-deg</input>
+        <output>/rotors/main/blade[1]/avg-incidence-deg</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <gain>0.5</gain>
+        <input>
+            <expression>
+                <sum>
+                    <!-- Blade 0 in ground effect -->
+                    <product>
+                        <table>
+                            <property>/rotors/main/blade[0]/avg-flap-deg</property>
+                            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>2.0</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/rotors/main/blade[0]/avg-incidence-deg</property>
+                            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>9.0</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/position/gear-agl-m</property>
+                            <entry><ind>  0.0</ind><dep>1.0</dep></entry>
+                            <entry><ind>15.34</ind><dep>0.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/velocities/airspeed-kt</property>
+                            <entry><ind>25.0</ind><dep>1.0</dep></entry>
+                            <entry><ind>30.0</ind><dep>0.0</dep></entry>
+                        </table>
+                    </product>
+                    <!-- Blade 0 out of ground effect -->
+                    <product>
+                        <table>
+                            <property>/rotors/main/blade[0]/avg-flap-deg</property>
+                            <entry><ind>2.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>2.4</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/rotors/main/blade[0]/avg-incidence-deg</property>
+                            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>9.0</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/position/gear-agl-m</property>
+                            <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>15.34</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/velocities/airspeed-kt</property>
+                            <entry><ind>65.0</ind><dep>1.0</dep></entry>
+                            <entry><ind>70.0</ind><dep>0.0</dep></entry>
+                        </table>
+                    </product>
+                    <!-- Blade 1 in ground effect -->
+                    <product>
+                        <table>
+                            <property>/rotors/main/blade[1]/avg-flap-deg</property>
+                            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>2.0</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/rotors/main/blade[1]/avg-incidence-deg</property>
+                            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>9.0</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/position/gear-agl-m</property>
+                            <entry><ind>  0.0</ind><dep>1.0</dep></entry>
+                            <entry><ind>15.34</ind><dep>0.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/velocities/airspeed-kt</property>
+                            <entry><ind>25.0</ind><dep>1.0</dep></entry>
+                            <entry><ind>30.0</ind><dep>0.0</dep></entry>
+                        </table>
+                    </product>
+                    <!-- Blade 1 out of ground effect -->
+                    <product>
+                        <table>
+                            <property>/rotors/main/blade[1]/avg-flap-deg</property>
+                            <entry><ind>2.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>2.4</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/rotors/main/blade[1]/avg-incidence-deg</property>
+                            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>9.0</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/position/gear-agl-m</property>
+                            <entry><ind>  0.0</ind><dep>0.0</dep></entry>
+                            <entry><ind>15.34</ind><dep>1.0</dep></entry>
+                        </table>
+                        <table>
+                            <property>/velocities/airspeed-kt</property>
+                            <entry><ind>65.0</ind><dep>1.0</dep></entry>
+                            <entry><ind>70.0</ind><dep>0.0</dep></entry>
+                        </table>
+                    </product>
+                </sum>
+            </expression>
+        </input>
+        <output>
+            <property>/sim/sound/blade-vortex-interaction</property>
+        </output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <expression>
+                <table>
+                    <property>/sim/sound/blade-vortex-interaction</property>
+                    <entry><ind>0.0</ind><dep>1.0</dep></entry>
+                    <entry><ind>1.0</ind><dep>0.0</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>
+            <property>/sim/sound/no-blade-vortex-interaction</property>
+        </output>
+    </filter>
+
+    <!-- Wind -->
+    <filter>
+        <name>wind-in</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <expression>
+                <log10>
+                    <table>
+                        <property>/velocities/airspeed-kt</property>
+                        <entry>
+                            <ind>7.775374</ind>
+                            <dep>1</dep>
+                        </entry>
+                        <entry>
+                            <ind>51</ind>
+                            <dep>2.5</dep>
+                        </entry>
+                        <entry>
+                            <ind>102</ind>
+                            <dep>10</dep>
+                        </entry>
+                    </table>
+                </log10>
+            </expression>
+        </input>
+        <output>
+            <property>/sounds/R22/environment/wind-in</property>
+        </output>
+    </filter>
+
+    <!-- Main Rotor -->
+    <filter>
+        <name>rotor-in</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <expression>
+                <log10>
+                    <table>
+                        <property>/rotors/main/rpm</property>
+                        <entry>
+                            <ind>9.96015289232</ind>
+                            <dep>1</dep>
+                        </entry>
+                        <entry>
+                            <ind>530</ind>
+                            <dep>10</dep>
+                        </entry>
+                    </table>
+                </log10>
+            </expression>
+        </input>
+        <output>
+            <property>/sounds/R22/rotors/rotor-in</property>
+        </output>
+    </filter>
+
+</PropertyList>

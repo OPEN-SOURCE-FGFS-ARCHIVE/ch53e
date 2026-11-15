@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">USMC #3</name>
+        <texture>Liveries/USMC_3.png</texture>
+
+      </livery>
+	   <ch53e>
+	   <hdr>false</hdr>
+		<als>true</als>
+		</ch53e>
+    </model>
+		<rendering>
+   <refl_correction type="string">-0.41</refl_correction>
+   
+  </rendering>
+  </sim>
+</PropertyList>

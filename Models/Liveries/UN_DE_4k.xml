@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <livery>
+        <name type="string">UN German</name>
+        <texture>Liveries/UN_DE_4k.png</texture>
+
+      </livery>
+	   <ch53e>
+	   <hdr>false</hdr>
+		<als>true</als>
+		</ch53e>
+    </model>
+		<rendering>
+   <refl_correction type="string">-0.41</refl_correction>
+   
+  </rendering>
+  </sim>
+</PropertyList>
